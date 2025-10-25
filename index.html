@@ -21,8 +21,195 @@
     <link class="favicon" rel="icon" type="image/x-icon" href="/logo.png" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="games.css" />
+    <style>
+      body:has(.modal-show) {
+        overflow: hidden;
+      }
+
+      .modal-bg {
+        background: rgba(20, 20, 20, 0.85);
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1000;
+      }
+
+      .modal {
+        background-color: rgb(10, 10, 10);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 50px;
+        width: 500px;
+        border: 3px solid rgb(60, 60, 60);
+      }
+
+      .modal-show {
+        display: flex;
+      }
+
+      .modal-label {
+        color: rgb(255, 40, 40);
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .label-img {
+        width: 25px;
+      }
+
+      .modal-title {
+        font-size: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      .modal-description {
+        color: rgb(200, 200, 200);
+        font-size: 16px;
+        line-height: 25px;
+      }
+
+      .modal-img {
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      .modal-btn {
+        background-color: rgb(236, 126, 0);
+        color: white;
+        font-size: 20px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 0px 10px rgb(190, 100, 0);
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0px 0px 15px rgb(190, 100, 0);
+      }
+
+      .modal-btn:active {
+        transform: scale(1.02) translateY(0px);
+        box-shadow: 0px 0px 5px rgb(190, 100, 0);
+      }
+
+      .modal-close {
+        cursor: pointer;
+        color: rgb(70, 70, 70);
+        position: absolute;
+        bottom: 10px;
+        font-size: 13px;
+      }
+
+      .modal-close:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-height: 650px) {
+        .modal {
+          gap: 15px;
+          padding: 30px;
+        }
+        .modal-title {
+          font-size: 25px;
+        }
+        .modal-label {
+          font-size: 15px;
+        }
+        .label-img {
+          width: 20px;
+        }
+        .modal-description {
+          font-size: 15px;
+          line-height: 23px;
+        }
+        .modal-img {
+          height: 130px;
+        }
+      }
+
+      @media (max-height: 490px) {
+        .modal {
+          padding-block: 20px;
+          gap: 10px;
+          border-width: 2px;
+          padding-inline: 20px;
+        }
+        .modal-title {
+          font-size: 20px;
+        }
+        .modal-label {
+          font-size: 13px;
+        }
+        .label-img {
+          width: 15px;
+        }
+        .modal-img {
+          height: 80px;
+        }
+      }
+
+      @media (max-height: 350px) {
+        .modal-img {
+          height: 50px;
+        }
+        .modal-btn {
+          font-size: 15px;
+          padding: 10px;
+        }
+        .modal-description {
+          font-size: 13px;
+          line-height: 18px;
+        }
+        .modal-title {
+          font-size: 16px;
+        }
+        .modal-label {
+          font-size: 11px;
+        }
+        .label-img {
+          width: 12px;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="modal-bg modal-show" id="modal-bg">
+      <div class="modal">
+        <h2 class="modal-label"><img src="warning.svg" class="label-img" /> IMPORTANT ANNOUNCEMENT</h2>
+        <h1 class="modal-title">THIS SITE WILL SHUT DOWN 12/31/25</h1>
+        <img src="thumb.png" class="modal-img" />
+        <p class="modal-description">
+          Thank you for supporting MacVG, but this version of the website is outdated and will shut down on December 31st, 2025.
+          To play on the official version shown above with 500+ games, countless features, community support, and more, click on
+          the button now!
+        </p>
+        <a href="https://mac-web.github.io/macvg/" class="modal-btn">Go To New MacVG</a>
+      </div>
+      <div class="modal-close" id="modal-close">Close</div>
+    </div>
+    <script>
+      const modal = document.getElementById("modal-bg");
+      document.getElementById("modal-close").onclick = () => {
+        modal.classList.remove("modal-show");
+      };
+    </script>
     <div class="overflow-menu shoot" id="overflow-menu">
       <a href="new.html" class="olink">New</a
       ><a href="trending.html" class="olink">Trending</a
@@ -1553,3 +1740,4 @@
     </script>
   </body>
 </html>
+
