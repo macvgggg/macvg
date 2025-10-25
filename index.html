@@ -26,6 +26,31 @@
         overflow: hidden;
       }
 
+      .top {
+        background-color: rgb(65, 58, 38);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: sticky;
+        top: 0px;
+        z-index: 999;
+      }
+
+      .top-img {
+        width: 35px;
+      }
+
+      .top-link {
+        color: rgb(236, 126, 0);
+        font-weight: bold;
+        font-size: 20px;
+      }
+
       .modal-bg {
         background: rgba(20, 20, 20, 0.85);
         backdrop-filter: blur(10px);
@@ -190,6 +215,13 @@
     </style>
   </head>
   <body>
+    <div class="top">
+      <img src="warning.svg" class="top-img" />
+      <span>
+        This version of MacVG is outdated and will shut down on December 31st, 2025. Play the new official version with 500+ games
+        <a href="https://mac-web.github.io/macvg/" class="top-link">HERE</a>!
+      </span>
+    </div>
     <div class="modal-bg modal-show" id="modal-bg">
       <div class="modal">
         <h2 class="modal-label"><img src="warning.svg" class="label-img" /> IMPORTANT ANNOUNCEMENT</h2>
@@ -1740,5 +1772,6 @@
     </script>
   </body>
 </html>
+
 
 
