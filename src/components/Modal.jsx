@@ -50,7 +50,7 @@ function Modal({ img = null, name, description = null, link = null, setModal, us
         )}
         {link ? (
           <Link to={link} className="action-btn" target="_blank">
-            What's new
+            Join now!
           </Link>
         ) : (
           <button type="submit" className="action-btn">

@@ -15,7 +15,7 @@ function Home() {
   const [sortMethod, setSortMethod] = useState("a");
   const [favorites, setFavorites] = useState(null);
   const [visibleCount, setVisibleCount] = useState(50);
-  const [modal, setModal] = useState(localStorage.getItem("modallll") ? JSON.parse(localStorage.getItem("modallll")) : true);
+  const [modal, setModal] = useState(localStorage.getItem("modalllll") ? JSON.parse(localStorage.getItem("modalllll")) : true);
   const searchInput = useRef();
 
   function handleSearch(e) {
@@ -65,7 +65,7 @@ function Home() {
   }, [games]);
 
   useEffect(() => {
-    localStorage.setItem("modallll", modal);
+    localStorage.setItem("modalllll", modal);
   }, [modal]);
 
   useEffect(() => {
@@ -91,10 +91,10 @@ function Home() {
     <>
       {modal && (
         <Modal
-          img="/macvg/update.jpg"
-          name="MacVG Fall Update!"
-          description="New games, Me Tab, gamer profile, bug fixes, and more! Check out what's new with this massive update!"
-          link="https://mac-web.github.io/macblog/#/post/59"
+          img="/macvg/discord.webp"
+          name="MacWeb Discord Server"
+          description="First 100 members to join will get an exclusive role! Join the MacWeb Discord server now to chat with gamers all around the world and the MacWeb dev team!"
+          link="https://discord.gg/UT7g2S2cBP"
           setModal={setModal}
         />
       )}
