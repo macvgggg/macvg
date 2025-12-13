@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/Home";
 import Game from "./pages/Game";
 import Tab from "./pages/Tab";
@@ -7,6 +8,12 @@ import ScrollTop from "./components/ScrollTop";
 import Cloaker from "./components/Cloaker";
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("favorites") === "bruh") {
+      localStorage.removeItem("favorites");
+    }
+  }, []);
+
   return (
     <HashRouter>
       <ScrollTop />
