@@ -15,7 +15,9 @@ function Home() {
   const [sortMethod, setSortMethod] = useState("a");
   const [favorites, setFavorites] = useState(null);
   const [visibleCount, setVisibleCount] = useState(50);
-  const [modal, setModal] = useState(localStorage.getItem("modalllll") ? JSON.parse(localStorage.getItem("modalllll")) : true);
+  const [modal, setModal] = useState(
+    localStorage.getItem("modalllllll") ? JSON.parse(localStorage.getItem("modalllllll")) : true
+  );
   const searchInput = useRef();
 
   function handleSearch(e) {
@@ -65,7 +67,7 @@ function Home() {
   }, [games]);
 
   useEffect(() => {
-    localStorage.setItem("modalllll", modal);
+    localStorage.setItem("modalllllll", modal);
   }, [modal]);
 
   useEffect(() => {

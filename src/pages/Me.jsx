@@ -61,7 +61,12 @@ function Me() {
             description="This is your gamer profile, where you can keep track of your daily login streaks, earn rare achievements from playing different games, and customize your profile to show off to other gamers on MacVG!"
           />
           <div className="profile">
-            <img src={pfps[user.pfp||0].img} className="profile-icon" title="Edit profile picture" onClick={() => setPfp(true)} />
+            <img
+              src={pfps[user.pfp || 0].img}
+              className="profile-icon"
+              title="Edit profile picture"
+              onClick={() => setPfp(true)}
+            />
             <div className="profile-content">
               <div
                 className={`profile-streak ${user.streak > 0 ? "" : "no-streak"}`}
@@ -79,7 +84,7 @@ function Me() {
               </button>
             </div>
           </div>
-          <div className="profile-sections">
+          {/* <div className="profile-sections">
             <div className="profile-section">
               <h2 className="profile-section-title">Achievements</h2>
               <p className="profile-section-description">Achievements coming soon!</p>
@@ -88,7 +93,12 @@ function Me() {
               <h2 className="profile-section-title">My Favorite Games</h2>
               <p className="profile-section-description">Showcase coming soon!</p>
             </div>
-          </div>
+          </div> */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Ad type="3087664545" />
           {editing && <Modal name="Edit user profile" setModal={setEditing} user={user} setUser={setUser} />}
           {pfp && <Modal name="Edit profile picture" pfps={pfps} setModal={setPfp} user={user} setUser={setUser} />}

@@ -40,7 +40,7 @@ function Footer() {
           Settings
         </Link>
       </div>
-      <div className="footer-column">
+      {/* <div className="footer-column">
         <h2 className="footer-title">MacVG Information</h2>
         <a href="https://mac-web.github.io/macblog/apps/macvg" className="footer-link" target="_blank">
           About
@@ -69,7 +69,7 @@ function Footer() {
         <a href="https://mac-web.github.io/macblog/" className="footer-link" target="_blank">
           MacBlog
         </a>
-      </div>
+      </div> */}
       <div className="footer-column">
         <h2 className="footer-title">Social</h2>
         <div className="footer-social">
